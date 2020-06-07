@@ -6,7 +6,7 @@ using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.Processing;
 using wallpaperSetter.Utilities;
 
-namespace wallpaperSetter.Art.GraphicEntities.BigElements {
+namespace wallpaperSetter.Art.GraphicEntities.MacroElements {
 	public class StarFrame : IElement {
 		public void draw(Image image, List<string> colorsStrings) {
 			float x = 0;

@@ -6,7 +6,7 @@ using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 using wallpaperSetter.Utilities;
 
-namespace wallpaperSetter.Art.GraphicEntities.SmallElements {
+namespace wallpaperSetter.Art.GraphicEntities.DetailsElements {
 	public class Mimmolini : IElement {
 		public void draw(Image image, List<string> colorsStrings) {
 			var numPunti = 10;

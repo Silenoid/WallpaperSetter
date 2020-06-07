@@ -10,8 +10,8 @@ namespace wallpaperSetter.Art {
         public void invent(Image<Rgba32> image, List<string> colorsStrings) {
             image.Mutate(imageProcessingContext => imageProcessingContext.Fill(Color.ParseHex(colorsStrings[0])));
 
-            ElementFactory.getRendomBigElement().draw(image, colorsStrings);
-            ElementFactory.getRendomSmallElement().draw(image, colorsStrings);
+            ElementFactory.getRandomMacroElement().draw(image, colorsStrings);
+            ElementFactory.getRandomDetailsElement().draw(image, colorsStrings);
         }
     }
 }
