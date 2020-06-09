@@ -3,7 +3,7 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
-using wallpaperSetter.Art.GraphicEntities;
+using wallpaperSetter.Art.Graphics;
 
 namespace wallpaperSetter.Art {
     public class Artista {
@@ -11,7 +11,6 @@ namespace wallpaperSetter.Art {
             image.Mutate(imageProcessingContext => imageProcessingContext.Fill(Color.ParseHex(colorsStrings[0])));
 
             ElementFactory.getRandomMacroElement().draw(image, colorsStrings);
-            ElementFactory.getRandomDetailsElement().draw(image, colorsStrings);
         }
     }
 }

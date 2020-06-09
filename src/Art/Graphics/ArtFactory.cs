@@ -1,9 +1,10 @@
 ﻿using System;
-using wallpaperSetter.Art.GraphicEntities.DetailsElements;
-using wallpaperSetter.Art.GraphicEntities.MacroElements;
+using wallpaperSetter.Art.Graphics.DetailsElements;
+using wallpaperSetter.Art.Graphics.Paintings;
+using wallpaperSetter.Art.Graphics.Particles;
 using wallpaperSetter.Utilities;
 
-namespace wallpaperSetter.Art.GraphicEntities {
+namespace wallpaperSetter.Art.Graphics {
 	public class ElementFactory {
 		
 		public static IElement getRandomMacroElement() {
@@ -13,8 +14,7 @@ namespace wallpaperSetter.Art.GraphicEntities {
 			}
 		}
 
-		public static IElement getRandomDetailsElement() {
-			return new Mimmolini();
+		public static AParticle getRandomParticleElement() {
 			switch (GenericUtils.random.Next(2)) {
 				case 0: return new AmebaParticles();
 				case 1: return new Mimmolini();

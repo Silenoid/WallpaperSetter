@@ -21,12 +21,12 @@ namespace wallpaperSetter.Utilities {
         
         public static T choose<T>(params T[] args) {
             if (args.Length == 0)
-                throw new Exception("Choosing on a empty array");
+                throw new Exception("Can't choose on zero args");
             return args[random.Next(args.Length)];
         }
 
-        public static float norma(float x, float y) {
-            return 0;
+        public static double norma(float x, float y) {
+            return Math.Sqrt(Math.Pow(x, 2) + Math.Pow(x, 2));
         }
     }
 }
