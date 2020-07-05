@@ -5,7 +5,7 @@ using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.Processing;
 using wallpaperSetter.Utilities;
 
-namespace wallpaperSetter.Art.Graphics.Particles {
+namespace wallpaperSetter.Art.Graphics.DetailsElements.Particles {
 	public class AmebaParticles : AbstractParticle {
 		public override void draw(Image image, List<string> colorsStrings) {
 			var numClusters = GenericUtils.random.Next(1, 4);

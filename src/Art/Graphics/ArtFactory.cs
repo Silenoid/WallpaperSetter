@@ -1,7 +1,7 @@
 ﻿using System;
 using wallpaperSetter.Art.Graphics.DetailsElements;
+using wallpaperSetter.Art.Graphics.DetailsElements.Particles;
 using wallpaperSetter.Art.Graphics.MacroElements;
-using wallpaperSetter.Art.Graphics.Particles;
 using wallpaperSetter.Utilities;
 
 namespace wallpaperSetter.Art.Graphics {
@@ -14,10 +14,10 @@ namespace wallpaperSetter.Art.Graphics {
 			}
 		}
 		
-		public static AbstractParticle getRandomDetailsElement() {
+		public static IDetailsElement getRandomDetailsElement() {
 			switch (GenericUtils.random.Next(2)) {
-				case 0: return new AmebaParticles();
-				case 1: return new Mimmolini();
+				//case 0: return new DetailsElements();
+				//case 1: return new DetailsElements();
 				default: throw new NotImplementedException("There is no graphic object assigned to this case");
 			}
 		}
