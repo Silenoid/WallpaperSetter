@@ -14,18 +14,16 @@ namespace wallpaperSetter.Art.Graphics {
 			}
 		}
 		
-		public static IDetailsElement getRandomDetailsElement() {
+		public static AbstractDetailsElement getRandomDetailsElement() {
 			switch (GenericUtils.random.Next(2)) {
-				//case 0: return new DetailsElements();
-				//case 1: return new DetailsElements();
+				case 0: return new Mimmolini();
+				case 1: return new Righini();
 				default: throw new NotImplementedException("There is no graphic object assigned to this case");
 			}
 		}
 
 		public static AbstractParticle getRandomParticleElement() {
 			switch (GenericUtils.random.Next(2)) {
-				case 0: return new AmebaParticles();
-				case 1: return new Mimmolini();
 				default: throw new NotImplementedException("There is no graphic object assigned to this case");
 			}
 		}
