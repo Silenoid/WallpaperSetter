@@ -4,12 +4,11 @@ using SixLabors.ImageSharp.Drawing;
 using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
-using wallpaperSetter.Art.Graphics.Paintings;
 using wallpaperSetter.Utilities;
 
 namespace wallpaperSetter.Art.Graphics.Particles {
-	public class Mimmolini : AParticle {
-		public void draw(Image image, List<string> colorsStrings) {
+	public class Mimmolini : AbstractParticle {
+		public override void draw(Image image, List<string> colorsStrings) {
 			var numPunti = 10;
 
 			var options = new GraphicsOptions() {

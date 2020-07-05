@@ -3,12 +3,11 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Drawing;
 using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.Processing;
-using wallpaperSetter.Art.Graphics.Paintings;
 using wallpaperSetter.Utilities;
 
 namespace wallpaperSetter.Art.Graphics.Particles {
-	public class AmebaParticles : AParticle {
-		public void draw(Image image, List<string> colorsStrings) {
+	public class AmebaParticles : AbstractParticle {
+		public override void draw(Image image, List<string> colorsStrings) {
 			var numClusters = GenericUtils.random.Next(1, 4);
 
 			IBrush brush = GenericUtils.choose(

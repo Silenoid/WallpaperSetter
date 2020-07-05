@@ -6,9 +6,9 @@ using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.Processing;
 using wallpaperSetter.Utilities;
 
-namespace wallpaperSetter.Art.Graphics.Paintings {
-	public class StarFrame : IElement {
-		public void draw(Image image, List<string> colorsStrings) {
+namespace wallpaperSetter.Art.Graphics.MacroElements {
+	public class StarFrame : AbstractMacroElement {
+		public override void draw(Image image, List<string> colorsStrings) {
 			float x = 0;
 			float y = 0;
 			var numStelle = (float) GenericUtils.random.Next(1, 5);
