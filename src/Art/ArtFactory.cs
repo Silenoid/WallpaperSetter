@@ -1,10 +1,13 @@
 ﻿using System;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Drawing;
+using SixLabors.ImageSharp.Drawing.Processing;
 using wallpaperSetter.Art.Graphics.DetailsElements;
-using wallpaperSetter.Art.Graphics.DetailsElements.Particles;
 using wallpaperSetter.Art.Graphics.MacroElements;
+using wallpaperSetter.Art.Structures;
 using wallpaperSetter.Utilities;
 
-namespace wallpaperSetter.Art.Graphics {
+namespace wallpaperSetter.Art {
 	public class ArtFactory {
 		
 		public static AbstractMacroElement getRandomMacroElement() {
@@ -23,10 +26,18 @@ namespace wallpaperSetter.Art.Graphics {
 			}
 		}
 
-		public static AbstractParticle getRandomParticleElement() {
+		public static Cluster getRandomCluster() {
+			return new Cluster(getRandomPolygon(), GenericUtils.random.Next(1,5));
+		}
+
+		public static Polygon getRandomPolygon() {
 			switch (GenericUtils.random.Next(2)) {
 				default: throw new NotImplementedException("There is no graphic object assigned to this case");
 			}
+		}
+
+		public static IBrush getRandomBrush(Color color1, Color color2) {
+			return new PatternBrush(color1, color2, getRandomPattern());
 		}
 
 		public static bool[,] getRandomPattern() {
