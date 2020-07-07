@@ -8,7 +8,7 @@ using wallpaperSetter.Utilities;
 
 namespace wallpaperSetter.Art.Graphics.MacroElements {
 	public class StarFrame : AbstractMacroElement {
-		public override void draw(Image image, List<string> colorsStrings) {
+		public override void drawMacro(Image image, List<string> colorsStrings) {
 			float x = 0;
 			float y = 0;
 			var numStelle = (float) GenericUtils.random.Next(1, 5);

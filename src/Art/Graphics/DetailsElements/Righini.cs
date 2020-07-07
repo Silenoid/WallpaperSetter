@@ -3,12 +3,11 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Drawing;
 using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.Processing;
-using wallpaperSetter.Art.Graphics.DetailsElements.Particles;
 using wallpaperSetter.Utilities;
 
 namespace wallpaperSetter.Art.Graphics.DetailsElements {
 	public class Righini : AbstractDetailsElement {
-		public override void draw(Image image, List<string> colorsStrings) {
+		protected override void drawDetails(Image image, List<string> colorsStrings) {
 			var numClusters = GenericUtils.random.Next(1, 4);
 
 			IBrush brush = GenericUtils.choose(

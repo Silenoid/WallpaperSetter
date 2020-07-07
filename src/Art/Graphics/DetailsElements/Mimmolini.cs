@@ -8,13 +8,13 @@ using wallpaperSetter.Utilities;
 
 namespace wallpaperSetter.Art.Graphics.DetailsElements {
 	public class Mimmolini : AbstractDetailsElement {
-		public override void draw(Image image, List<string> colorsStrings) {
+		protected override void drawDetails(Image image, List<string> colorsStrings) {
 			var numPunti = 10;
 
 			var options = new GraphicsOptions() {
 				ColorBlendingMode = PixelColorBlendingMode.Multiply
 			};
-			IBrush brush = Brushes.Vertical(Color.ParseHex(colorsStrings[2]), Color.ParseHex(colorsStrings[1]));
+			IBrush brush = new PatternBrush(Color.ParseHex(colorsStrings[2]), Color.ParseHex(colorsStrings[1]), ArtFactory.getRandomPattern());
 			IPen pen = Pens.DashDot(Color.ParseHex(colorsStrings[1]), 5);
 
 			for (var i = 0; i < numPunti; i++) {
