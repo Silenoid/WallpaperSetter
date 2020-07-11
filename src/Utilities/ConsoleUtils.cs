@@ -2,7 +2,7 @@
 using System.Numerics;
 
 namespace wallpaperSetter.Utilities {
-	public class PrinterUtils {
+	public class ConsoleUtils {
 		public static void printHelp() {
 			printBox("ACCEPTED ARGUMENTS", new[] {
 				"-h\t\t\t\tPrints help menu",
@@ -12,7 +12,7 @@ namespace wallpaperSetter.Utilities {
 			});
 		}
 
-		private static void printBox(string title, string[] lines) {
+		public static void printBox(string title, string[] lines) {
 			Console.WriteLine("\n╔══ " + title.ToUpper() + " ═════════════════════");
 			foreach (var line in lines) {
 				Console.WriteLine("║ " + line);
@@ -27,8 +27,15 @@ namespace wallpaperSetter.Utilities {
 				Console.WriteLine("║ args[" + i + "]: " + args[i]);
 			}
 			Console.WriteLine("║ Vector hardware acceleration: " + Vector.IsHardwareAccelerated);
-			Console.WriteLine("║ Dimenioni Schermo: " + GenericUtils.screenWidth + ", " + GenericUtils.screenHeight);
+			Console.WriteLine("║ Dimenioni Schermo: " + GenericUtils.screenSize.Width + ", " + GenericUtils.screenSize.Height);
 			Console.WriteLine("╚═══════════════════════════════════════════════\n");
+		}
+
+		public static void printDebug(string msg) {
+			var prevColor = Console.ForegroundColor;
+			Console.ForegroundColor = ConsoleColor.Magenta;
+			Console.WriteLine(msg);
+			Console.ForegroundColor = prevColor;
 		}
 	}
 }

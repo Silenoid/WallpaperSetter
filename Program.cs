@@ -10,14 +10,14 @@ namespace wallpaperSetter {
         static void Main(string[] args) {
             
             //Welcome
-            PrinterUtils.printWelcome(args);
+            ConsoleUtils.printWelcome(args);
             
             //Selezione modalità
             if (args.Length > 0) {
                 switch (args[0]) {
                     
                     case "-h": case "--help":
-                        PrinterUtils.printHelp();
+                        ConsoleUtils.printHelp();
                         break;
                     
                     case "-gen":
@@ -28,17 +28,17 @@ namespace wallpaperSetter {
                             GearWallpaper.generateArt(colorsStrings);
                         } else {
                             Console.WriteLine("Wrong number of passed arguments");
-                            PrinterUtils.printHelp();
+                            ConsoleUtils.printHelp();
                         }
                         break;
                     
                     case "-web":
-                        GearWallpaper.downloadArt(new Uri("https://picsum.photos/" + GenericUtils.screenWidth + "/" + GenericUtils.screenHeight), GearWallpaper.Style.Centered);
+                        GearWallpaper.downloadArt(new Uri("https://picsum.photos/" + GenericUtils.screenSize.Width + "/" + GenericUtils.screenSize.Height), GearWallpaper.Style.Centered);
                         break;
                     
                     default:
                         Console.WriteLine("Command not recognized");
-                        PrinterUtils.printHelp();
+                        ConsoleUtils.printHelp();
                         break;
                 }
             }

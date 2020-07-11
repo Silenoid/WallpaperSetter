@@ -15,25 +15,25 @@ namespace wallpaperSetter.Art.Graphics.MacroElements {
 
 			switch (GenericUtils.random.Next(4)) {
 				case 0:
-					x = GenericUtils.screenWidth;
-					y = GenericUtils.screenHeight / numStelle;
+					x = GenericUtils.screenSize.Width;
+					y = GenericUtils.screenSize.Height / numStelle;
 					break;
 				case 1:
-					x = GenericUtils.screenWidth / numStelle;
+					x = GenericUtils.screenSize.Width / numStelle;
 					y = 0f;
 					break;
 				case 2:
 					x = 0f;
-					y = GenericUtils.screenHeight / numStelle;
+					y = GenericUtils.screenSize.Height / numStelle;
 					break;
 				case 3:
-					x = GenericUtils.screenWidth / numStelle;
-					y = GenericUtils.screenHeight;
+					x = GenericUtils.screenSize.Width / numStelle;
+					y = GenericUtils.screenSize.Height;
 					break;
 			}
 
 			for (var i = 0; i < numStelle; i++) {
-				var sizeFactor = (int) Math.Sqrt(Math.Pow(GenericUtils.screenWidth, 2) + Math.Pow(GenericUtils.screenHeight, 2));
+				var sizeFactor = (int) Math.Sqrt(Math.Pow(GenericUtils.screenSize.Width, 2) + Math.Pow(GenericUtils.screenSize.Height, 2));
 				float innerRad = GenericUtils.random.Next(sizeFactor / 6, sizeFactor / 2);
 				float outerRad = GenericUtils.random.Next(sizeFactor / 6, sizeFactor / 2);
 				var spikes = GenericUtils.random.Next(3, 7);

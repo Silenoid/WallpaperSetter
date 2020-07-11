@@ -53,7 +53,7 @@ namespace wallpaperSetter {
             settingsFile.colors = colorsStrings;
             FileSystemUtils.writeToJsonFile(FileSystemUtils.settingsPath, settingsFile);
 
-            using (var image = new Image<Rgba32>(GenericUtils.screenWidth, GenericUtils.screenHeight)) {
+            using (var image = new Image<Rgba32>((int) GenericUtils.screenSize.Width, (int) GenericUtils.screenSize.Height)) {
                 var artista = new Artista();
                 artista.invent(image, colorsStrings);
                 
