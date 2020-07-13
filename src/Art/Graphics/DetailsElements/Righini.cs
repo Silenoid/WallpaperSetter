@@ -3,15 +3,10 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Drawing;
 using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.Processing;
-using wallpaperSetter.Art.Structures;
 using wallpaperSetter.Utilities;
 
 namespace wallpaperSetter.Art.Graphics.DetailsElements {
 	public class Righini : AbstractDetailsElement {
-		
-		public Righini(Cluster cluster) : base(cluster) {
-			this.cluster = cluster;
-		}
 
 		protected override void drawDetails(Image image, List<string> colorsStrings) {
 			var numClusters = GenericUtils.random.Next(1, 4);

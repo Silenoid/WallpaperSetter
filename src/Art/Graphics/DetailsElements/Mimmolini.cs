@@ -4,15 +4,10 @@ using SixLabors.ImageSharp.Drawing;
 using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
-using wallpaperSetter.Art.Structures;
 using wallpaperSetter.Utilities;
 
 namespace wallpaperSetter.Art.Graphics.DetailsElements {
 	public class Mimmolini : AbstractDetailsElement {
-
-		public Mimmolini(Cluster cluster) : base(cluster) {
-			this.cluster = cluster;
-		}
 
 		protected override void drawDetails(Image image, List<string> colorsStrings) {
 			var options = new GraphicsOptions() {

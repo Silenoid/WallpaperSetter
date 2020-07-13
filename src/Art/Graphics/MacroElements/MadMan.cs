@@ -2,7 +2,6 @@
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Drawing.Processing;
 using SixLabors.ImageSharp.Processing;
-using wallpaperSetter.Utilities;
 
 namespace wallpaperSetter.Art.Graphics.MacroElements {
 	public class MadMan : AbstractMacroElement {

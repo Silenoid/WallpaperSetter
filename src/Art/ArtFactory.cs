@@ -19,10 +19,10 @@ namespace wallpaperSetter.Art {
 		}
 
 		public static AbstractDetailsElement getRandomDetailsElement() {
-			return new Mimmolini(new Cluster());
+			return new Mimmolini();
 			switch (GenericUtils.random.Next(2)) {
-				case 0: return new Mimmolini(new Cluster());
-				case 1: return new Righini(new Cluster());
+				case 0: return new Mimmolini();
+				case 1: return new Righini();
 				default: throw new NotImplementedException("There is no graphic object assigned to this case");
 			}
 		}
@@ -97,21 +97,21 @@ namespace wallpaperSetter.Art {
 		}
 
 		public static IBrush getRandomBrush(Color color1, Color color2) {
-			var singleColor = GenericUtils.choose(color1, color2);
-			return GenericUtils.choose<IBrush>(
-				new PatternBrush(color1, color2, getRandomPattern()),
-				new SolidBrush(singleColor),
-				Brushes.ForwardDiagonal(color1,color2),
-				Brushes.BackwardDiagonal(color1,color2),
-				new LinearGradientBrush(
+			switch (GenericUtils.random.Next(5)) {
+				case 0: return new PatternBrush(color1, color2, getRandomPattern());
+				case 1: return Brushes.ForwardDiagonal(color1,color2);
+				case 2: return Brushes.BackwardDiagonal(color1,color2);
+				case 3: return new LinearGradientBrush(
 					new PointF(0,0), 
 					new PointF(1,1), 
 					GradientRepetitionMode.None, 
 					new [] {
 						new ColorStop(1, color1),
 						new ColorStop(1, color2) 
-					})
-			);
+					});
+				case 4: return new SolidBrush(color2);
+				default: throw new NotImplementedException("There is no graphic object assigned to this case");
+			}
 		}
 		
 		public static bool[,] getRandomPattern() {

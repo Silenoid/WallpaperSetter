@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Drawing;
 using wallpaperSetter.Utilities;
@@ -40,9 +39,11 @@ namespace wallpaperSetter.Art.Structures {
 		public List<PointF> calculatePositions() {
 			var points = new List<PointF>();
 			var point = new PointF(0,0);
+			ConsoleUtils.printDebug("Particle numbers: " + particlesNumber);
 			for (var i = 0; i < particlesNumber; i++) {
 				switch (disposition) {
 					case Disposition.Random:
+						ConsoleUtils.printDebug("Random disposition");
 						point.X = GenericUtils.screenSize.Width * (float) GenericUtils.getRandomDisposition(0f, 1f, 0.05f);
 						point.Y = GenericUtils.screenSize.Height * (float) GenericUtils.getRandomDisposition(0f, 1f, 0.05f);
 						break;
