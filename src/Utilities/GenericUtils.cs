@@ -39,9 +39,13 @@ namespace wallpaperSetter.Utilities {
 			var center = lenght * 0.5;
 			if (holeValue >= (lenght * 0.5) + margin) throw new Exception("holeValue " + holeValue + " is greater than the possible range " + ((lenght * 0.5) + margin));
 			return choose(
-				GenericUtils.random.NextDouble() * Math.Abs(center - holeValue - margin) - margin,
-				GenericUtils.random.NextDouble() * Math.Abs(center - holeValue - margin) + center + holeValue
+				random.NextDouble() * Math.Abs(center - holeValue - margin) - margin,
+				random.NextDouble() * Math.Abs(center - holeValue - margin) + center + holeValue
 			);
+		}
+
+		public static bool choosePercent(int percent) {
+			return random.Next(100) < percent;
 		}
 	}
 }

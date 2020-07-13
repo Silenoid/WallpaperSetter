@@ -11,6 +11,7 @@ namespace wallpaperSetter.Art {
 	public static class ArtFactory {
 		
 		public static AbstractMacroElement getRandomMacroElement() {
+			return new MadMan();
 			switch (GenericUtils.random.Next(1)) {
 				case 0: return new StarFrame();
 				default: throw new NotImplementedException("There is no graphic object assigned to this case");
@@ -96,16 +97,38 @@ namespace wallpaperSetter.Art {
 		}
 
 		public static IBrush getRandomBrush(Color color1, Color color2) {
-			return new PatternBrush(color1, color2, getRandomPattern());
+			var singleColor = GenericUtils.choose(color1, color2);
+			return GenericUtils.choose<IBrush>(
+				new PatternBrush(color1, color2, getRandomPattern()),
+				new SolidBrush(singleColor),
+				Brushes.ForwardDiagonal(color1,color2),
+				Brushes.BackwardDiagonal(color1,color2),
+				new LinearGradientBrush(
+					new PointF(0,0), 
+					new PointF(1,1), 
+					GradientRepetitionMode.None, 
+					new [] {
+						new ColorStop(1, color1),
+						new ColorStop(1, color2) 
+					})
+			);
 		}
-
+		
 		public static bool[,] getRandomPattern() {
-			return new bool[4, 4] {
-				{false, true, false, false},
-				{false, false, true, false},
-				{false, false, true, false},
-				{false, true, false, false}
-			};
+			return GenericUtils.choose(
+				new bool[4, 4] {
+					{false, true, false, false},
+					{false, false, true, false},
+					{false, false, true, false},
+					{false, true, false, false}
+				},
+				new bool[4, 4] {
+					{true, false, false, true},
+					{true, true, false, false},
+					{false, true, true, false},
+					{false, false, true, true},
+				}
+			);
 		}
 	}
 }
